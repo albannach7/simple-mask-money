@@ -14,10 +14,7 @@ module.exports = {
   },
 
   setCaretPosition(input, index) {
-    if (input.setSelectionRange) {
-      input.focus();
-      input.setSelectionRange(index, index);
-    } else if (input.createTextRange) {
+    if (input.createTextRange) {
       const range = input.createTextRange();
       range.collapse(true);
       range.moveEnd('character', index);
